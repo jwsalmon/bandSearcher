@@ -1,0 +1,87 @@
+body {
+    background: url(https://www.zacbrownbandsanfrancisco.com/static2/background1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.jumbotron {
+    text-align: center;
+    height: 500px;
+    opacity: .7;
+    
+}
+
+.line {
+    background-color: black;
+    width: 100%;
+    height: 1px;
+}
+
+.button1 {
+    float: left;
+    margin-top: 325px;
+    
+
+}
+.button2 {
+    float: right;
+    margin-top: 325px;
+    
+}
+.u-full-width{
+     background-color: white;
+     opacity: 0.75;
+     width: 100%;
+     border-radius: 5px;
+     
+}
+thead{
+    padding: 10px;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+}
+td{
+    text-align: center;
+    
+}
+tr:hover{
+     background-color: gray;
+     color: gold;
+     opacity: none;
+     font-family: 'Permanent Marker', cursive;
+}
+.form-control{
+    font-family: 'Permanent Marker', cursive;
+}
+label{
+    font-family: 'Zilla Slab Highlight', cursive;
+    color:black;
+    font-size: 18px;
+    padding: 2px;
+    background-color: goldenrod;
+}
+.input-group-addon{
+    font-family: 'Zilla Slab Highlight', cursive;
+    color:black;
+    font-size: 18px;
+    padding: 2px;
+    background-color: goldenrod;  
+}
+#heading{
+    font-family: 'Zilla Slab Highlight', cursive;
+    color:black;
+    font-size: 30px;
+    padding: 2px;
+    background-color: goldenrod;  
+    text-align: center;
+    border-radius: 5px;
+}
+#submit{
+     color: goldenrod;
+     opacity: none;
+     font-family: 'Permanent Marker', cursive;
+}
+
+
+  
+  
