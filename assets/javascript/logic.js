@@ -20,6 +20,7 @@ hideTour();
       $(this).addClass('animated hinge').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
         $(this).removeClass('animated hinge');
     });
+    searchForBand();
   })
 
   $("tr").click(function(){
@@ -39,3 +40,5 @@ $('.funky-animations h4').on('click', function() {
         $(this).removeClass('animated hinge');
     });
 });
+
+//add code to move artist to "My Band Picks" table and call firebase function

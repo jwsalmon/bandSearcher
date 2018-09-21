@@ -177,8 +177,8 @@ function searchBands(artist, location, radius) {
 
 }
 
-$("#submit").on("click", function () {
-    event.preventDefault();
+function searchForBand() {
+    
     artist = $("#bandName").val();
     var locationZip = $("#location").val();
     var searchRange = $("#radius").val();
