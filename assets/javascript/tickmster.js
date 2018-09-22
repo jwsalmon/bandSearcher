@@ -2,6 +2,7 @@
 var artist = "";
 var venueCity = "";
 var venueName = "";
+var radius = "";
 var priceMin, priceMax;
 //search events on artist only
 function searchBands(artist) {
@@ -37,8 +38,10 @@ function searchBands(artist) {
                 );
                 newRow.attr("data-lat",events[i]._embedded.venues[0].location.latitude);
                 newRow.attr("data-long",events[i]._embedded.venues[0].location.longitude);
+                newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").append(newRow);
+                $(".eventEntry").click(addToInten);
             }
         },
         error: function (xhr, status, err) {
@@ -81,8 +84,10 @@ function searchBands(artist, frmDate, toDate) {
                 );
                 newRow.attr("data-lat",events[i]._embedded.venues[0].location.latitude);
                 newRow.attr("data-long",events[i]._embedded.venues[0].location.longitude);
+                newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").append(newRow);
+                $(".eventEntry").click(addToInten);
             }
         },
         error: function (xhr, status, err) {
@@ -127,8 +132,10 @@ function searchBands(artist, frmDate, toDate, location, radius) {
                 );
                 newRow.attr("data-lat",events[i]._embedded.venues[0].location.latitude);
                 newRow.attr("data-long",events[i]._embedded.venues[0].location.longitude);
+                newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").append(newRow);
+                $(".eventEntry").click(addToInten);
             }
         },
         error: function (xhr, status, err) {
@@ -170,8 +177,10 @@ function searchBands(artist, location, radius) {
                 );
                 newRow.attr("data-lat",events[i]._embedded.venues[0].location.latitude);
                 newRow.attr("data-long",events[i]._embedded.venues[0].location.longitude);
+                newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").append(newRow);
+                $(".eventEntry").click(addToInten);
             }
         },
         error: function (xhr, status, err) {
