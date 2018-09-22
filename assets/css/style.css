@@ -89,6 +89,7 @@ label{
 h3 {
     float: right;    
     font-size: 14px;
+    
 }
 
 .form-control {
@@ -99,7 +100,27 @@ h3 {
 strong {
     background-color: white;
     opacity: .6;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 3px;
+
 }
+
+.footer {
+    border-style: solid;
+    background-color: white;
+    opacity: .5;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    position: fixed;
+}
+.radioBackground {
+    border-radius: 15px;
+}
+
+
+
 
 
 
