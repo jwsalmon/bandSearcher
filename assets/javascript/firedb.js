@@ -19,7 +19,7 @@ function saveBandToIten(user, artist, venueName, venueCity, priceMin, priceMax,v
         priceMax: priceMax,
         priceMin: priceMin,
         lat: venueLat,
-        long: venuelong
+        long: venueLong
 
     };
 
