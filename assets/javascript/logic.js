@@ -1,7 +1,7 @@
 var favs = $(".favs");
 var tour = $(".tour");
 var submit = $(".submitBtn");
-var userName = $("#newUser").val().trim();
+var userName = '';
 //var location = $("#location").val().trim();
 var bandName = $("#bandName").val().trim();
 
@@ -39,11 +39,13 @@ function addToInten() {
     var artist = saveEvent[0];
     var venueName = saveEvent[1];
     var venueCity = saveEvent[2];
-    var priceMax = saveEvent[3];
-    var priceMin = saveEvent[4];
+    var eventDate = saveEvent[3];
+    var priceMax = saveEvent[4];
+    var priceMin = saveEvent[5];
     var venueLat = $(this).attr("data-lat");
     var venueLong = $(this).attr("data-long");
-    saveBandToIten(userName, artist, venueName, venueCity, priceMin, priceMax,venueLat,venueLong)
+    userName = $("#newUser").val().trim();
+    saveBandToIten(userName, artist, venueName, venueCity,eventDate, priceMin, priceMax,venueLat,venueLong)
     //$("#resultas").append($item); 
 }
 
