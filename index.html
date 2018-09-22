@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
+
 
 </head>
 
@@ -51,7 +53,7 @@
             <div class="col-lg-6">
                 <label for="date-range">Date Range</label>
                 <div class="input-group input-daterange">
-                    <input type="date" class="form-control" id="fromDate" >
+                    <input type="date" class="form-control" id="fromDate">
                     <div class="input-group-addon">-</div>
                     <input type="date" class="form-control" id="toDate">
                 </div>
@@ -154,7 +156,7 @@
     </div>
 </div> -->
         <div class="favs">
-            <table class="u-full-width">
+            <table class="u-full-width" id="bandIteniary-Table">
                 <thead>
                     <tr>
                         <div id="heading">My Band Picks</div>
@@ -185,10 +187,18 @@
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script src="assets/javascript/prj.js"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js"></script>
+        <!-- LINK TO FIREBASE GOES HERE -->
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+        <script src="assets/javascript/tickmster.js"></script>
+        <script src="assets/javascript/firedb.js"></script>
         <script src="assets/javascript/logic.js"></script>
+        <script src="assets/javascript/googmap.js"></script>
+        <script src="assets/javascript/money.js"></script>
 </body>
 
 </html>
