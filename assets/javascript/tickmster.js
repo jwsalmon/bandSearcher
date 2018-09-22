@@ -2,6 +2,7 @@
 var artist = "";
 var venueCity = "";
 var venueName = "";
+var radius = "";
 var priceMin, priceMax;
 //search events on artist only
 function searchBands(artist) {
@@ -36,9 +37,11 @@ function searchBands(artist) {
                     $("<td>").text(priceMax)
                 );
                 newRow.attr("data-lat",events[i]._embedded.venues[0].location.latitude);
-                newRow.attr("data-long",events[i]._embedded.venues[0].location.latitude);
+                newRow.attr("data-long",events[i]._embedded.venues[0].location.longitude);
+                newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").append(newRow);
+                $(".eventEntry").click(addToInten);
             }
         },
         error: function (xhr, status, err) {
@@ -80,9 +83,11 @@ function searchBands(artist, frmDate, toDate) {
                     $("<td>").text(priceMax)
                 );
                 newRow.attr("data-lat",events[i]._embedded.venues[0].location.latitude);
-                newRow.attr("data-long",events[i]._embedded.venues[0].location.latitude);
+                newRow.attr("data-long",events[i]._embedded.venues[0].location.longitude);
+                newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").append(newRow);
+                $(".eventEntry").click(addToInten);
             }
         },
         error: function (xhr, status, err) {
@@ -126,9 +131,11 @@ function searchBands(artist, frmDate, toDate, location, radius) {
                     $("<td>").text(priceMax)
                 );
                 newRow.attr("data-lat",events[i]._embedded.venues[0].location.latitude);
-                newRow.attr("data-long",events[i]._embedded.venues[0].location.latitude);
+                newRow.attr("data-long",events[i]._embedded.venues[0].location.longitude);
+                newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").append(newRow);
+                $(".eventEntry").click(addToInten);
             }
         },
         error: function (xhr, status, err) {
@@ -149,12 +156,9 @@ function searchBands(artist, location, radius) {
             console.log(json);
             var events = json._embedded.events;
             for (var i = 0; i < events.length; i++) {
-                // console.log("We are looking at event: " + i);
-                var artistName = events[i].name;
-                var venueName = events[i]._embedded.venues[0].name;
-                var venueCity = events[i]._embedded.venues[0].city.name;
-                var venueCountry = events[i]._embedded.venues[0].country.name;
-                var priceMin, priceMax;
+                 venueName = events[i]._embedded.venues[0].name;
+                 venueCity = events[i]._embedded.venues[0].city.name;
+                 
                 if (events[i].priceRanges != undefined) {
                     priceMin = events[i].priceRanges[0].min;
                     priceMax = events[i].priceRanges[0].max;
@@ -165,17 +169,18 @@ function searchBands(artist, location, radius) {
                 }
                 // Create the new row
                 var newRow = $("<tr>").append(
-                    $("<td>").text(artistName),
+                    $("<td>").text(artist),
                     $("<td>").text(venueName),
                     $("<td>").text(venueCity),
-                    $("<td>").text(venueCountry),
                     $("<td>").text(priceMin),
                     $("<td>").text(priceMax)
                 );
                 newRow.attr("data-lat",events[i]._embedded.venues[0].location.latitude);
-                newRow.attr("data-long",events[i]._embedded.venues[0].location.latitude);
+                newRow.attr("data-long",events[i]._embedded.venues[0].location.longitude);
+                newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").append(newRow);
+                $(".eventEntry").click(addToInten);
             }
         },
         error: function (xhr, status, err) {
@@ -194,7 +199,7 @@ function searchForBand() {
     var toDate = $("#toDate").val();
 
     console.log("you enter a date range from: " + frmDate.toString() + " to: " + toDate.toString()); 
-    if ((locationZip === "") && (searchRange === "") && (searchRange === "") && (frmDate === "")) {
+    if ((locationZip === "") && (searchRange === "") && (frmDate === "")) {
         searchBands(artist);
     }
     else if((locationZip === "") && (searchRange === "") && (frmDate !== "")){

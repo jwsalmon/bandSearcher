@@ -24,8 +24,12 @@ hideTour();
   })
 
   $("tr").click(function(){
-      favs.fadeIn('slow');
+      addToInten();
   })
+
+  function addToInten(){
+    favs.fadeIn('slow');
+  }
 
 //   var newRow = $("<tr>").append(
 //     $("<td>").text("#bandName"),
