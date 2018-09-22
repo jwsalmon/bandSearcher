@@ -81,6 +81,26 @@ label{
      opacity: none;
      font-family: 'Permanent Marker', cursive;
 }
+.logos {
+    
+    background-color: white;
+    opacity: .6;
+}
+h3 {
+    float: right;    
+    font-size: 14px;
+}
+
+.form-control {
+    opacity: .7;
+}
+
+
+strong {
+    background-color: white;
+    opacity: .6;
+}
+
 
 
   

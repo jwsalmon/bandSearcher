@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Follow That Band</title>
+    <title>Band Searcher</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -18,11 +18,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1">
-            <h1 class="animated lightSpeedIn infinate delay-3s">Test Animation</h1>
-        </span>
-    </nav>
+    <div class="logos">
+        <h3 class="animated lightSpeedIn infanate delay-3s">Jesse Salmon, Heather Drattlo, Alex Le, Tony Salvati</h3>
+        <div class="animated lightSpeedIn infinate delay-3s"><img src="assets/images/equalizergif1.gif"></div>
+    <h1 class="animated rollIn infinate delay-3s"><img src="assets/images/logo3.png"></h1>
+</div>
     <br>
     <br>
     <div class="container">
@@ -38,7 +38,11 @@
             </div>
             <div class="col-lg-4">
                 <label for="location-radius">Radius</label>
-                <input class="form-control" id="radius" placeholder="Enter Radius">
+                <br>
+                <input type="checkbox" name="radius" value="5"><strong>5 Miles</strong>
+                <input type="checkbox" name="radius" value="10"><strong>10 Miles</strong>
+                <input type="checkbox" name="radius" value="25"><strong>25 Miles</strong>
+                <input type="checkbox" name="radius" value="50"><strong>50 Miles</strong>
             </div>
         </div>
         <br>
@@ -164,6 +168,7 @@
                     <tr>
                         <th>Band</th>
                         <th>City</th>
+                        <th>Venue</th>
                         <th>Date</th>
                         <th>Ticket Cost</th>
                     </tr>
@@ -174,6 +179,7 @@
                     <tr id="entry">
                         <td class="bandName"></td>
                         <td class="city"></td>
+                        <td class="venue"></td>
                         <td class="date"></td>
                         <td class="cost"></td>
                     </tr>
