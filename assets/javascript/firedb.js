@@ -11,8 +11,8 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 function saveBandToIten(user, artist, venueName, venueCity, priceMin, priceMax,venueLat,venueLong) {
-
-    user = {
+    
+    var userData = {
         artist: artist,
         venueName: venueName,
         venueCity: venueCity,
@@ -22,9 +22,11 @@ function saveBandToIten(user, artist, venueName, venueCity, priceMin, priceMax,v
         long: venueLong
 
     };
+    var updates = {};
+    updates[user] = userData
 
     // Uploads artist data to user in database
-    database.ref().push(user);
+    database.ref().update(updates);
 }
 
 //add code to load iteniary from firebase for given user
