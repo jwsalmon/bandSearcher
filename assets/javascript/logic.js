@@ -47,7 +47,56 @@ function addToInten() {
     userName = $("#newUser").val().trim();
     saveBandToIten(userName, artist, venueName, venueCity,eventDate, priceMin, priceMax,venueLat,venueLong)
     //$("#resultas").append($item); 
+    addToIntenTable(saveEvent,venueLat,venueLong)
 }
+function addToIntenTable(eventArray, venueLat, venueLong){
+    var artist = eventArray[0];
+    var venueName = eventArray[1];
+    var venueCity = eventArray[2];
+    var eventDate = eventArray[3];
+    var priceMax = eventArray[4];
+    var priceMin = eventArray[5];
+    
+    var newRow = $("<tr>").append(
+        $("<td>").text(artist),
+        $("<td>").text(venueName),
+        $("<td>").text(venueCity),
+        $("<td>").text(eventDate),
+        $("<td>").text(priceMin),
+        $("<td>").text(priceMax)
+    );
+    newRow.attr("data-lat", venueLat);
+    newRow.attr("data-long", venueLong);
+    newRow.addClass(".btnShow");
+    // Do other things.
+    $("#bandIteniary-Table > tbody").append(newRow); 
+       
+}
+$( "#bandIteniary-Table tbody" ).on( "click", "tr", function(){
+//$(".btnShow").on("click", function () {
+    var lat = $(this).attr("data-lat");
+    var long = $(this).attr("data-long");
+    $("#dialog").dialog({
+        modal: true,
+        title: "Google Map",
+        width: 600,
+        hright: 450,
+        buttons: {
+            Close: function () {
+                $(this).dialog('close');
+            }
+        },
+        open: function () {
+            var mapOptions = {
+                center: new google.maps.LatLng(lat, long),
+                zoom: 18,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map($("#dvMap")[0], mapOptions);
+        }
+    });
+});
+
 
 //   var newRow = $("<tr>").append(
 //     $("<td>").text("#bandName"),
