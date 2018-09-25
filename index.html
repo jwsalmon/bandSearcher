@@ -19,6 +19,7 @@
 
 <body>
     <div class="logos">
+
         <h3 class="animated lightSpeedIn infanate delay-3s">Jesse Salmon, Heather Drattlo, Alex Le, Tony Salvati</h3>
         <div class="animated lightSpeedIn infinate delay-3s"><img src="assets/images/equalizergif1.gif"></div>
     <h1 class="animated rollIn infinate delay-3s"><img src="assets/images/logo3.png"></h1>
@@ -28,21 +29,23 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
+
                 <label for="band-name">Band Name</label>
                 <input class="form-control" id="bandName" placeholder="Band Name">
             </div>
-
             <div class="col-lg-4">
                 <label for="current-location">Current Location</label>
-                <input class="form-control" id="location" placeholder="Enter Location">
+                <input class="form-control" id="location" placeholder="Enter Zip Code">
             </div>
             <div class="col-lg-4">
                 <label for="location-radius">Radius</label>
                 <br>
-                <input type="checkbox" name="radius" value="5"><strong>5 Miles</strong>
-                <input type="checkbox" name="radius" value="10"><strong>10 Miles</strong>
-                <input type="checkbox" name="radius" value="25"><strong>25 Miles</strong>
-                <input type="checkbox" name="radius" value="50"><strong>50 Miles</strong>
+                <div class="radioBackground">
+                    <input type="checkbox" name="radius" value="5"><strong> 5 Miles </strong>
+                    <input type="checkbox" name="radius" value="10"><strong> 10 Miles </strong>
+                    <input type="checkbox" name="radius" value="25"><strong> 25 Miles </strong>
+                    <input type="checkbox" name="radius" value="50"><strong> 50 Miles </strong>
+                </div>
             </div>
         </div>
         <br>
@@ -52,12 +55,9 @@
                 <label for="user-name">User Name</label>
                 <input class="form-control" id="newUser" placeholder="Enter User Name">
             </div>
-
             <div class="col-lg-3">
                     <button type="button" class="btn btn-warning">Get Info</button>
                 </div>
-
-
             <div class="col-lg-6">
                 <label for="date-range">Date Range</label>
                 <div class="input-group input-daterange">
@@ -66,9 +66,7 @@
                     <input type="date" class="form-control" id="toDate">
                 </div>
             </div>
-
         </div>
-
         <br>
         <div class="submitBtn">
             <button type="button" id="submit" class="btn btn-dark btn-lf btn-block" value="1">Submit</button>
@@ -84,6 +82,7 @@
                         <th>City</th>
                         <th>Date</th>
                         <th>Ticket Cost</th>
+
                     </tr>
                 </thead>
 
@@ -98,6 +97,7 @@
                     <tr id="entry">
                         <td class="bandName"></td>
                         <td cllass="venue"></td>
+
                         <td class="city"></td>
                         <td class="date"></td>
                         <td class="cost"></td>
@@ -105,71 +105,9 @@
 
                 </tbody>
             </table>
-        </div>
-        <!-- <div class="tour">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="row">
-                <div class="col-md-2">
-                    <h3>Band</h3>
-                    <div id="bandDiv"></div>
-                </div>
-                <div class="col-md-2">
-                    <h3>Venue</h3>
-                    <div id="venueDiv"></div>
-                </div>
-                <div class="col-md-2">
-                    <h3>City</h3>
-                    <div id="cityDiv"></div>
-                </div>
-                <div class="col-md-2">
-                    <h3>Date</h3>
-                    <div id="dateDiv"></div>
-                </div>
-                <div class="col-md-2">
-                    <h3>Something</h3>
-                    <div id="somethingDiv"></div>
-                </div>
-                <div class="col-md-3">
-                    <h3>Location Cost</h3>
-                    <div id="locationCostDiv"></div>
-                </div>
-            </div>
-          
-            <br>
-            <div class="line"></div>
-            
-                    
-                        <div class="button1">
-                                <button type="button" class="btn btn-primary btn-lg">Google Maps</button>
-                            </div>
-                    
-                    
-                            <div class="button2">
-                                    <button type="button" class="btn btn-primary btn-lg">Travel Agency</button>
-                                    </div>
-                    
-                </div>
-            </div> -->
-
-
+        </div
         <br>
         <br>
-        <!-- <div class="favs">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Band Favorites</h3>
-                </div>
-                <div class="col-md-10">
-                    <div id="bandFavoritesDiv"></div>
-                </div>
-
-            </div>
-            <br>
-            <div class="line"></div>
-        </div>
-    </div>
-</div> -->
         <div class="favs">
             <table class="u-full-width" id="bandIteniary-Table">
                 <thead>
@@ -182,12 +120,14 @@
                         <th>Venue</th>
                         <th>Date</th>
                         <th>Ticket Cost</th>
+                        <th>Price Max</th>
+                        <th>Price Min</th>
+                       
                     </tr>
                 </thead>
 
                 <tbody>
-
-                    <tr id="entry">
+                    <tr class="entry">
                         <td class="bandName"></td>
                         <td class="city"></td>
                         <td class="venue"></td>
@@ -198,14 +138,16 @@
                 </tbody>
             </table>
         </div>
-        <div id="dialog" style="display: none">
+    </div>
+
+    <div class="footer"
+
+        <p class="animated lightSpeedIn infanate delay-3s">Created by: Jesse Salmon, Heather Drattlo, Alex Le, Tony Salvati</p>
+    </div>
+    <div id="dialog" style="display: none">
             <div id="dvMap" style="height: 380px; width: 580px;">
             </div>
-        </div>
-
-
-
-
+    </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyCrij9IOyKPBZ3tmfQs0xexN17IaExJJ8I"></script>
@@ -218,7 +160,7 @@
         <script src="assets/javascript/firedb.js"></script>
         <script src="assets/javascript/logic.js"></script>
         <script src="assets/javascript/googmap.js"></script>
-        <script src="assets/javascript/money.js"></script>
+
 </body>
 
 </html>
