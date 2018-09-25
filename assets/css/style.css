@@ -44,11 +44,18 @@ td{
     text-align: center;
     
 }
+tr{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 12px;
+}
 tr:hover{
-     background-color: gray;
-     color: gold;
+     background-color: black;
+     color: goldenrod;
      opacity: none;
      font-family: 'Permanent Marker', cursive;
+}
+td:hover{
+    background-color: gray;
 }
 .form-control{
     font-family: 'Permanent Marker', cursive;
@@ -82,7 +89,7 @@ label{
      font-family: 'Permanent Marker', cursive;
 }
 .logos {
-    
+    text-align: center;
     background-color: white;
     opacity: .6;
 }
@@ -107,18 +114,20 @@ strong {
 }
 
 .footer {
-    border-style: solid;
-    background-color: white;
-    opacity: .5;
-    width: 100%;
-    bottom: 0px;
+    opacity: 1;
+    padding: 2%;
+    width: 100%; 
     text-align: center;
-    position: fixed;
-}
-.radioBackground {
-    border-radius: 5px;
+    position: sticky;
+    background-color: black;
+    font-family: 'Permanent Marker', cursive;
+    color: goldenrod;
+    font-size: 10px;
 }
 
+.radioBackground {
+    border-radius: 5px;
+}   
 
 
 
