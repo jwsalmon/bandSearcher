@@ -113,4 +113,11 @@ $('.funky-animations h4').on('click', function () {
     });
 });
 
+
+
+    $('#fas fa-print').on("click", function(){
+        $.window.print();   
+})
+
+
 //add code to move artist to "My Band Picks" table and call firebase function
