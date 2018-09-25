@@ -1,3 +1,9 @@
+/**
+ * test code for launching google map in dialog
+ * this code has been moved to logic.js under
+ * click handler for Itinerary table
+ */
+
 var lat, long;
 $(function () {
     $(".btnShow").click(function () {
