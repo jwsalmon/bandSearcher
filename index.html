@@ -20,18 +20,19 @@
 <body>
     <div class="logos">
 
+        <h3 class="animated lightSpeedIn infanate delay-3s">Jesse Salmon, Heather Drattlo, Alex Le, Tony Salvati</h3>
         <div class="animated lightSpeedIn infinate delay-3s"><img src="assets/images/equalizergif1.gif"></div>
-        <h1 class="animated rollIn infinate delay-3s"><img src="assets/images/logo3.png"></h1>
-    </div>
+    <h1 class="animated rollIn infinate delay-3s"><img src="assets/images/logo3.png"></h1>
+</div>
     <br>
     <br>
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <label for="user-name">User</label>
-                <input class="form-control" id="newUser" placeholder="Enter User Name">
-            </div>
 
+                <label for="band-name">Band Name</label>
+                <input class="form-control" id="bandName" placeholder="Band Name">
+            </div>
             <div class="col-lg-4">
                 <label for="current-location">Current Location</label>
                 <input class="form-control" id="location" placeholder="Enter Zip Code">
@@ -50,12 +51,13 @@
         <br>
         <br>
         <div class="row">
-            <div class="col-lg-6">
-                <label for="band-name">Band Name</label>
-                <input class="form-control" id="bandName" placeholder="Enter Band Name">
+            <div class="col-lg-3">
+                <label for="user-name">User Name</label>
+                <input class="form-control" id="newUser" placeholder="Enter User Name">
             </div>
-
-
+            <div class="col-lg-3">
+                    <button type="button" class="btn btn-warning">Get Info</button>
+                </div>
             <div class="col-lg-6">
                 <label for="date-range">Date Range</label>
                 <div class="input-group input-daterange">
@@ -64,9 +66,7 @@
                     <input type="date" class="form-control" id="toDate">
                 </div>
             </div>
-
         </div>
-
         <br>
         <div class="submitBtn">
             <button type="button" id="submit" class="btn btn-dark btn-lf btn-block" value="1">Submit</button>
@@ -78,18 +78,26 @@
                 <thead>
                     <tr>
                         <th>Band</th>
+                        <th>Venue</th>
                         <th>City</th>
                         <th>Date</th>
                         <th>Ticket Cost</th>
-                        <th>Price Min</th>
-                        <th>Price Max</th>
+
                     </tr>
                 </thead>
 
                 <tbody>
-                   
+                    <tr id="dummyEntry">
+                        <td class="bandName">No Doubt</td>
+                        <td class="venue">Talking Stick Arena</td>
+                        <td class="city">Phoenix</td>
+                        <td class="date">9/22/18</td>
+                        <td class="cost">$55</td>
+                    </tr>
                     <tr id="entry">
                         <td class="bandName"></td>
+                        <td cllass="venue"></td>
+
                         <td class="city"></td>
                         <td class="date"></td>
                         <td class="cost"></td>
@@ -97,11 +105,9 @@
 
                 </tbody>
             </table>
-        </div>
-
+        </div
         <br>
         <br>
-
         <div class="favs">
             <table class="u-full-width" id="bandIteniary-Table">
                 <thead>
@@ -113,6 +119,7 @@
                         <th>City</th>
                         <th>Venue</th>
                         <th>Date</th>
+                        <th>Ticket Cost</th>
                         <th>Price Max</th>
                         <th>Price Min</th>
                        
@@ -120,7 +127,6 @@
                 </thead>
 
                 <tbody>
-
                     <tr class="entry">
                         <td class="bandName"></td>
                         <td class="city"></td>
@@ -132,7 +138,6 @@
                 </tbody>
             </table>
         </div>
-
     </div>
 
     <div class="footer"
@@ -143,6 +148,7 @@
             <div id="dvMap" style="height: 380px; width: 580px;">
             </div>
     </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyCrij9IOyKPBZ3tmfQs0xexN17IaExJJ8I"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -154,7 +160,6 @@
         <script src="assets/javascript/firedb.js"></script>
         <script src="assets/javascript/logic.js"></script>
         <script src="assets/javascript/googmap.js"></script>
-        <script src="assets/javascript/money.js"></script>
 
 </body>
 
