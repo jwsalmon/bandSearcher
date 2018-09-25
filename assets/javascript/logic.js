@@ -29,35 +29,37 @@ $("tr").click(function () {
 })
 
 function addToInten() {
+    // this function adds events to itinerary table and firebase
+    //when user clicks on them
     favs.fadeIn('slow');
     var $row = $(this).closest("tr"),       // Finds the closest row <tr> 
         $tds = $row.find("td");             // Finds all children <td> elements
-    var saveEvent =[];
+    var saveEvent = [];
     $.each($tds, function () {               // Visits every single <td> element
-            saveEvent.push($(this).text());   // Prints out the text within the <td>
+        saveEvent.push($(this).text());   // Prints out the text within the <td>
     });
     console.log(saveEvent);
     var artist = saveEvent[0];
     var venueName = saveEvent[1];
     var venueCity = saveEvent[2];
     var eventDate = saveEvent[3];
-    var priceMax = saveEvent[4];
-    var priceMin = saveEvent[5];
+    var priceMin = saveEvent[4];
+    var priceMax = saveEvent[5];
     var venueLat = $(this).attr("data-lat");
     var venueLong = $(this).attr("data-long");
     userName = $("#newUser").val().trim();
-    saveBandToIten(userName, artist, venueName, venueCity,eventDate, priceMin, priceMax,venueLat,venueLong)
+    saveBandToIten(userName, artist, venueName, venueCity, eventDate, priceMin, priceMax, venueLat, venueLong)
     //$("#resultas").append($item); 
-    addToIntenTable(saveEvent,venueLat,venueLong)
+    addToIntenTable(saveEvent, venueLat, venueLong)
 }
-function addToIntenTable(eventArray, venueLat, venueLong){
+function addToIntenTable(eventArray, venueLat, venueLong) {
     var artist = eventArray[0];
     var venueName = eventArray[1];
     var venueCity = eventArray[2];
     var eventDate = eventArray[3];
     var priceMax = eventArray[4];
     var priceMin = eventArray[5];
-    
+
     var newRow = $("<tr>").append(
         $("<td>").text(artist),
         $("<td>").text(venueName),
@@ -70,11 +72,24 @@ function addToIntenTable(eventArray, venueLat, venueLong){
     newRow.attr("data-long", venueLong);
     newRow.addClass(".btnShow");
     // Do other things.
-    $("#bandIteniary-Table > tbody").append(newRow); 
-       
+    $("#bandIteniary-Table > tbody").append(newRow);
+
 }
-$( "#bandIteniary-Table tbody" ).on( "click", "tr", function(){
-//$(".btnShow").on("click", function () {
+$("#getUserItin").on("click", function () {
+
+    userName = $("#newUser").val();
+    if (userName !== "") { //check if user name is entered
+        if (loadIten(userName)) { //check if username exits in db
+            favs.fadeIn('slow');
+        }
+    }
+    else {
+        alert("Please enter user name before clicking get info button");
+    }
+});
+
+$("#bandIteniary-Table tbody").on("click", "tr", function () {
+    // this funtion pop up google map when user clicks on event in Itinerary
     var lat = $(this).attr("data-lat");
     var long = $(this).attr("data-long");
     $("#dialog").dialog({
@@ -98,15 +113,6 @@ $( "#bandIteniary-Table tbody" ).on( "click", "tr", function(){
     });
 });
 
-
-//   var newRow = $("<tr>").append(
-//     $("<td>").text("#bandName"),
-//     $("<td>").text("#city"),
-//     $("<td>").text("#date"),
-//     $("<td>").text("#cost")
-
-// );
-// $("#entry > tbody").append(newRow);
 $('.funky-animations h4').on('click', function () {
     $(this).addClass('animated hinge').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
         $(this).removeClass('animated hinge');
@@ -115,8 +121,8 @@ $('.funky-animations h4').on('click', function () {
 
 
 
-    $('#fas fa-print').on("click", function(){
-        $.window.print();   
+$('#fas fa-print').on("click", function () {
+    $.window.print();
 })
 
 

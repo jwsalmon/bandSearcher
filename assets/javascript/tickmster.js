@@ -1,3 +1,31 @@
+/**
+ * implementation of ticket master api
+ * for BandSearch project
+ * functions:
+ *   searchBands - this is the core code for looking artist events this fuction is overloaded
+ *      artist - name of artist to look up events for
+ *   searchBands  - same as above function but takes two more parameters
+ *      artist - name of artist to look up events for
+ *      frmDate - start date to search for events
+ *      toDate - end date to search for events
+ *   searchBands - same as above this one takes location(zip code) and radius to search on
+ *      artist - name of artist to look up events for
+ *      frmDate - start date to search for events
+ *      toDate - end date to search for events
+ *      location - postal code to search for events(zip code)
+ *      radius - radius to search in
+ *   searchBands - same as above only remove frmDate and toDate
+ *      artist - name of artist to look up events for
+ *      location - postal code to search for events(zip code)
+ *      radius - radius to search in
+ *   searchForBand - entry point to tickmster implementation
+ *                   this function check to see which elements
+ *                   have been enter on main(index) page when submit
+ *                   is clicked. Based on this it calls the appropreate
+ *                   implementation of searchBands
+ *     
+ */
+
 //event variables
 var artist = "";
 var venueCity = "";
@@ -197,7 +225,7 @@ function searchBands(artist, location, radius) {
     });
 
 }
-
+ 
 function searchForBand() {
 
     artist = $("#bandName").val();
