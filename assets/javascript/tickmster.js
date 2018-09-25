@@ -42,7 +42,7 @@ function searchBands(artist) {
                 newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
                 newRow.addClass("eventEntry");
                 // Do other things.
-                $("#bandEvents-Table > tbody").append(newRow);
+                $("#bandEvents-Table > tbody").prepend(newRow);
             }
             $(".eventEntry").click(addToInten);
         },
@@ -90,7 +90,7 @@ function searchBands(artist, frmDate, toDate) {
                 newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
                 newRow.addClass("eventEntry");
                 // Do other things.
-                $("#bandEvents-Table > tbody").append(newRow);
+                $("#bandEvents-Table > tbody").prepend(newRow);
             }
             $(".eventEntry").click(addToInten);
         },
@@ -140,7 +140,7 @@ function searchBands(artist, frmDate, toDate, location, radius) {
                 newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
                 newRow.addClass("eventEntry");
                 // Do other things.
-                $("#bandEvents-Table > tbody").append(newRow);
+                $("#bandEvents-Table > tbody").prepend(newRow);
             }
             $(".eventEntry").click(addToInten);
         },
@@ -175,7 +175,7 @@ function searchBands(artist, location, radius) {
                     priceMax = "pay at venue";
                 }
                 // Create the new row
-                var newRow = $("<tr>").append(
+                var newRow = $("<tr>").prepend(
                     $("<td>").text(artist),
                     $("<td>").text(venueName),
                     $("<td>").text(venueCity),
@@ -187,7 +187,7 @@ function searchBands(artist, location, radius) {
                 newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
                 newRow.addClass("eventEntry");
                 // Do other things.
-                $("#bandEvents-Table > tbody").append(newRow);
+                $("#bandEvents-Table > tbody").prepend(newRow);
             }
             $(".eventEntry").click(addToInten);
         },
