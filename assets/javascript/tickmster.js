@@ -49,7 +49,7 @@ function searchBands(artist) {
                 venueCity = events[i]._embedded.venues[0].city.name;
                 venueDate = events[i].dates.start.localDate
 
-                if (events[i].priceRanges != undefined) {
+                if (events[i].priceRanges !== undefined) {
                     priceMin = events[i].priceRanges[0].min;
                     priceMax = events[i].priceRanges[0].max;
                 }
@@ -66,8 +66,14 @@ function searchBands(artist) {
                     $("<td>").text(priceMin),
                     $("<td>").text(priceMax)
                 );
-                newRow.attr("data-lat", events[i]._embedded.venues[0].location.latitude);
-                newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
+                if (events[i]._embedded.venues[0].location.latitude !== undefined) {
+                    newRow.attr("data-lat", events[i]._embedded.venues[0].location.latitude);
+                    newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
+                }
+                else {
+                    newRow.attr("data-lat", "to be determined");
+                    newRow.attr("data-long", "to be determined");
+                }
                 newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").prepend(newRow);
@@ -97,7 +103,7 @@ function searchBands(artist, frmDate, toDate) {
                 venueCity = events[i]._embedded.venues[0].city.name;
                 venueDate = events[i].dates.start.localDate
 
-                if (events[i].priceRanges != undefined) {
+                if (events[i].priceRanges !== undefined) {
                     priceMin = events[i].priceRanges[0].min;
                     priceMax = events[i].priceRanges[0].max;
                 }
@@ -114,8 +120,14 @@ function searchBands(artist, frmDate, toDate) {
                     $("<td>").text(priceMin),
                     $("<td>").text(priceMax)
                 );
-                newRow.attr("data-lat", events[i]._embedded.venues[0].location.latitude);
-                newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
+                if (events[i]._embedded.venues[0].location.latitude !== undefined) {
+                    newRow.attr("data-lat", events[i]._embedded.venues[0].location.latitude);
+                    newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
+                }
+                else {
+                    newRow.attr("data-lat", "to be determined");
+                    newRow.attr("data-long", "to be determined");
+                }
                 newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").prepend(newRow);
@@ -147,7 +159,7 @@ function searchBands(artist, frmDate, toDate, location, radius) {
                 venueCity = events[i]._embedded.venues[0].city.name;
                 venueDate = events[i].dates.start.localDate
 
-                if (events[i].priceRanges != undefined) {
+                if (events[i].priceRanges !== undefined) {
                     priceMin = events[i].priceRanges[0].min;
                     priceMax = events[i].priceRanges[0].max;
                 }
@@ -164,8 +176,14 @@ function searchBands(artist, frmDate, toDate, location, radius) {
                     $("<td>").text(priceMin),
                     $("<td>").text(priceMax)
                 );
-                newRow.attr("data-lat", events[i]._embedded.venues[0].location.latitude);
-                newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
+                if (events[i]._embedded.venues[0].location.latitude !== undefined) {
+                    newRow.attr("data-lat", events[i]._embedded.venues[0].location.latitude);
+                    newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
+                }
+                else {
+                    newRow.attr("data-lat", "to be determined");
+                    newRow.attr("data-long", "to be determined");
+                }
                 newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").prepend(newRow);
@@ -194,7 +212,7 @@ function searchBands(artist, location, radius) {
                 venueCity = events[i]._embedded.venues[0].city.name;
                 venueDate = events[i].dates.start.localDate
 
-                if (events[i].priceRanges != undefined) {
+                if (events[i].priceRanges !== undefined) {
                     priceMin = events[i].priceRanges[0].min;
                     priceMax = events[i].priceRanges[0].max;
                 }
@@ -211,8 +229,14 @@ function searchBands(artist, location, radius) {
                     $("<td>").text(priceMin),
                     $("<td>").text(priceMax)
                 );
-                newRow.attr("data-lat", events[i]._embedded.venues[0].location.latitude);
-                newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
+                if (events[i]._embedded.venues[0].location.latitude !== undefined) {
+                    newRow.attr("data-lat", events[i]._embedded.venues[0].location.latitude);
+                    newRow.attr("data-long", events[i]._embedded.venues[0].location.longitude);
+                }
+                else {
+                    newRow.attr("data-lat", "to be determined");
+                    newRow.attr("data-long", "to be determined");
+                }
                 newRow.addClass("eventEntry");
                 // Do other things.
                 $("#bandEvents-Table > tbody").prepend(newRow);
@@ -225,7 +249,7 @@ function searchBands(artist, location, radius) {
     });
 
 }
- 
+
 function searchForBand() {
 
     artist = $("#bandName").val();

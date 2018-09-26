@@ -90,8 +90,10 @@ $("#getUserItin").on("click", function () {
 
 $("#bandIteniary-Table tbody").on("click", "tr", function () {
     // this funtion pop up google map when user clicks on event in Itinerary
+    
     var lat = $(this).attr("data-lat");
     var long = $(this).attr("data-long");
+    if (lat === "to be determined") {return;}
     $("#dialog").dialog({
         modal: true,
         title: "Google Map",
