@@ -76,7 +76,7 @@ function addToIntenTable(eventArray, venueLat, venueLong) {
 
 }
 $("#getUserItin").on("click", function () {
-
+    favs.fadeIn('slow');
     userName = $("#newUser").val();
     if (userName !== "") { //check if user name is entered
         if (loadIten(userName)) { //check if username exits in db
