@@ -128,9 +128,26 @@ strong {
 .radioBackground {
     border-radius: 5px;
 }   
+i{
+    color: black;
+}  
+i:hover{
+background-color: black;
+color: white;
+}
+.getUser{
+     font-family: 'Permanent Marker', cursive;
+    margin-top: 40px;
+}
+#getUserItin.btn.btn-warning{
+    background-color: goldenrod;
+    border-color: goldenrod  
+}
 
-
-
+#getUserItin.btn.btn-warning:hover{
+    background-color: darkgoldenrod;
+    border-color: darkgoldenrod;  
+}
 
 
   
